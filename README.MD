@@ -1,4 +1,4 @@
-<img src="https://github.com/Ritwik880/Registration-System/blob/main/php.png?raw=false" width="100%">
+<img src="https://github.com/Ritwik880/Registration-System-1/blob/main/php.png?raw=false" width="100%">
 
 # NOTES KEEPER
 
@@ -11,13 +11,13 @@ Built with <b>PHP</b> with ❤️
 
 
 #### View Live Demo
-  <pre><center><a href="https://github.com/Ritwik880/Registration-System"><b>Registration</b></a></center></pre>
+  <pre><center><a href="https://github.com/Ritwik880/Registration-System-1"><b>Registration</b></a></center></pre>
 
 ## Setup
 
   ##### Clone the repository
 ```bash
-git clone https://github.com/Ritwik880/Registration-System.git
+git clone https://github.com/Ritwik880/Registration-System-1.git
 ```
   ##### Move to the desired folder
 ```bash

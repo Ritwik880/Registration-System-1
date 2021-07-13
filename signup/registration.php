@@ -56,18 +56,20 @@ session_start();
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
 
-        $password = password_hash($password, PASSWORD_BCRYPT);
-        $cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
-        $emailquery = "SELRCT * FROM `registration` WHERE email='$email' ";
-        $result = mysqli_query($conn, $emailquery);
-        $emailcount = mysqli_num_rows($result);
-        if (!$result || mysqli_num_rows($result) == 0) {
-            $emailcount = mysqli_num_rows($result);
+        $pass = password_hash($password, PASSWORD_BCRYPT);
+        $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
+
+        $emailquery = "SELECT * FROM `registration` WHERE email='$email' ";
+        $query = mysqli_query($conn, $emailquery);
+
+        $emailcount = mysqli_num_rows($query);
+        if ($emailcount > 0) {
+            echo "Email already exists";
         } else {
             if ($password === $cpassword) {
-                $sql = "INSERT INTO `registration` ( `name`, `email`, `phone`, `password`, `cpassword`) VALUES ('$name', '$email', '$phone', '$password', '$cpassword');";
+                $sql = "INSERT INTO `registration` ( `name`, `email`, `phone`, `password`, `cpassword`) VALUES ('$name', '$email', '$phone', '$pass', '$cpass');";
 
-                $result = mysqli_query($conn, $sql);
+                $query = mysqli_query($conn, $emailquery);
                 if ($conn) {
     ?>
                     <script>

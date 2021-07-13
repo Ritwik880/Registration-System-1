@@ -51,7 +51,7 @@ session_start();
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $email_search = "select * from registration where email = '$email'";
+        $email_search = "SELECT * FROM `registration` WHERE email = '$email'";
         $query = mysqli_query($conn, $email_search);
         $email_count = mysqli_num_rows($query);
 
@@ -106,20 +106,17 @@ session_start();
             <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
                 <button type="button" class="btn btn-primary">Login via Gmail</button>
                 <button type="button" class="btn btn-danger">Login via facebook</button>
-
-
                 <h5>OR</h5>
-
                 <div class="mb-3">
                     <input placeholder="Email address" type="email" name="email" class="form-control" id="email" required>
                 </div>
                 <div class="mb-3">
                     <input placeholder="password" type="password" name="password" class="form-control" id="password" required>
                 </div>
-
-
-
                 <button type="submit" name="submit" class="btn btn-primary">Login Now</button>
+                <br>
+                <span style="font-weight: bold;" class="my-3">Not Have an account?</span>
+                <a class="btn1" style="font-weight: bold;" href="./registration.php">SignUp Now</a>
             </form>
 
         </div>
